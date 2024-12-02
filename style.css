@@ -65,3 +65,14 @@ button:nth-child(13) {
 button:nth-child(13):hover {
     background-color: #ff4d5b;
 }
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
