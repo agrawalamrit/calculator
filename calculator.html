@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" disabled>
+        <div class="buttons">
+            <!-- Number Buttons -->
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendOperator('/')">/</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendOperator('*')">*</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendOperator('-')">-</button>
+
+            <button onclick="clearResult()">C</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendOperator('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+        let result = "";
+
+        function appendNumber(number) {
+            result += number;
+            document.getElementById("result").value = result;
+        }
+
+        function appendOperator(operator) {
+            if (result !== "" && !isNaN(result[result.length - 1])) {
+                result += operator;
+                document.getElementById("result").value = result;
+            }
+        }
+
+        function calculate() {
+            try {
+                result = eval(result).toString(); // Use eval for simplicity (not recommended in production)
+                document.getElementById("result").value = result;
+            } catch {
+                document.getElementById("result").value = "Error";
+                result = "";
+            }
+        }
+
+        function clearResult() {
+            result = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
