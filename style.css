@@ -5,18 +5,67 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     display: flex;
+    flex-direction: column; /* Ensure everything stacks vertically */
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Stack elements vertically */
     height: 100vh;
+    box-sizing: border-box;
 }
 
-/* Container */
-.container {
-    display: flex;
-    flex-direction: column; /* Stack calculator and footer */
-    align-items: center;    /* Center align all content */
-    justify-content: center;
+/* Calculator Container */
+.calculator {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+/* Display Screen */
+#result {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    outline: none;
+}
+
+/* Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 50px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+/* Clear Button */
+button:nth-child(13) {
+    background-color: #e63946;
+    color: white;
+}
+
+button:nth-child(13):hover {
+    background-color: #ff4d5b;
 }
 
 /* Footer Styling */
@@ -25,4 +74,5 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
     color: #666;
+    width: 100%;
 }
