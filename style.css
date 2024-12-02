@@ -5,10 +5,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     display: flex;
-    flex-direction: column; /* Ensure everything stacks vertically */
-    justify-content: center;
+    flex-direction: column; /* Stack elements vertically */
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Full viewport height */
     box-sizing: border-box;
 }
 
@@ -19,6 +18,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 300px;
+    margin-top: auto; /* Push to the top */
+    margin-bottom: 20px; /* Add space before the footer */
 }
 
 /* Display Screen */
@@ -71,8 +72,8 @@ button:nth-child(13):hover {
 /* Footer Styling */
 footer {
     text-align: center;
-    margin-top: 20px;
     font-size: 0.9rem;
     color: #666;
-    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+    margin-bottom: 10px;
 }
